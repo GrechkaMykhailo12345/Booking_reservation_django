@@ -8,7 +8,9 @@ class TypeRoom(models.Model):
     def __str__(self):
         return f'Тип кімнати: {self.name}.'
     
-    
+    class Meta():
+        verbuse_name = "Тип кімнати"
+        verbuse_name_plural = "Тип кімнат"
 
 class Room(models.Model):
     type_room = models.ForeignKey(TypeRoom, on_delete=models.CASCADE, related_name='rooms')
