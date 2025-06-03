@@ -9,8 +9,8 @@ class TypeRoom(models.Model):
         return f'Тип кімнати: {self.name}.'
     
     class Meta():
-        verbuse_name = "Тип кімнати"
-        verbuse_name_plural = "Тип кімнат"
+        verbose_name = "Тип кімнати"
+        verbose_name_plural = "Тип кімнат"
 
 class Room(models.Model):
     type_room = models.ForeignKey(TypeRoom, on_delete=models.CASCADE, related_name='rooms')
@@ -22,6 +22,10 @@ class Room(models.Model):
 
     def __str__(self):
         return f'Кімната:{self.name}, ціна:{self.price}.'
+    
+    class Meta():
+        verbose_name = "Кімната"
+        verbose_name_plural = "Кімнати"
 
 class Booking(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='bookings')
@@ -35,3 +39,7 @@ class Booking(models.Model):
 
     def __str__(self):
         return f'Бронювання:{self.room}, дата заїзду:{self.date_in}, дата виїзду:{self.date_out}.'
+    
+    class Meta():
+        verbose_name = "Бронювання"
+        verbose_name_plural = "Бронювання"
