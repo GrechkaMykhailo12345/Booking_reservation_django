@@ -27,9 +27,4 @@ def login_page(request):
             messages.error(request, message="Неправильний логін і пароль")
     else:
         form = AuthenticationForm()
-        return render(request, 'users_system/login.html', context={"form": form})
-
-def user_logout(request):
-    logout(request)
-    messages.info(request, 'Ви успішно вийшли з системи.')
-    return redirect('main')
+    return render(request, 'users_system/login.html', context={"form": form})
