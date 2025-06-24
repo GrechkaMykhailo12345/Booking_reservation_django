@@ -8,8 +8,11 @@
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+
+{% include 'menu.html' %}
+
 <div class="container mt-4">
-    <h1>LogikaHotel</h1>
+
     {% block content %}
         
     {% endblock %}

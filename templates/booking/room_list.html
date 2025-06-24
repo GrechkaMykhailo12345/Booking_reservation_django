@@ -11,7 +11,7 @@
         <div class="card-body">
             <h5 class="card-title">{{room.name}}</h5>
             <p class="card-text">{{room.price}} грн</p>
-            <a href="#" class="btn btn-primary">Детальніше</a>
+            <a href="{% url 'booking_page' room.id %}" class="btn btn-primary">Забронювати</a>
         </div>
     </div>
     {% empty %}

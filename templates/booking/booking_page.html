@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h2>Бронювання кімнат</h2>
+
+<div class="card" style="max-width: 30rem;">
+    <img src="{{room.picture.url}}" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Номер {{room.name}} <span class="badge text-bg-info">{{room.type_room}}</span></h5>
+        <p class="card-text">{{room.price}} грн/доба</p>
+        <span class="badge text-bg-secondary">Місць: {{room.places}}</span>
+        <p class="card-text">{{room.description}} </p>
+    </div>
+</div>
+
+
+{% endblock %}
