@@ -2,3 +2,9 @@ body{
     background: black;
     color: white;
 }
+
+.rooms-list{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

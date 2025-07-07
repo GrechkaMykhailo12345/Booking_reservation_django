@@ -3,16 +3,29 @@
 {% block content %}
 
 <h2>Бронювання кімнат</h2>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <img src="{{room.picture.url}}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Номер {{room.name}} <span class="badge text-bg-info">{{room.type_room}}</span>
+                </h5>
+                <p class="card-text">{{room.price}} грн/доба</p>
+                <span class="badge text-bg-secondary">Місць: {{room.places}}</span>
+                <p class="card-text">{{room.description}} </p>
+            </div>
+        </div>
+    </div>
 
-<div class="card" style="max-width: 30rem;">
-    <img src="{{room.picture.url}}" class="card-img-top">
-    <div class="card-body">
-        <h5 class="card-title">Номер {{room.name}} <span class="badge text-bg-info">{{room.type_room}}</span></h5>
-        <p class="card-text">{{room.price}} грн/доба</p>
-        <span class="badge text-bg-secondary">Місць: {{room.places}}</span>
-        <p class="card-text">{{room.description}} </p>
+    <div class="col">
+        <form action="" method="post">
+            <h1>Бронювання номера</h1>
+            {% csrf_token %}
+            {{ form.as_div }}
+
+            <button type="submit" class="btn btn-dark my-3"> Забронювати </button>
+        </form>
     </div>
 </div>
-
 
 {% endblock %}
